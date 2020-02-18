@@ -68,7 +68,10 @@ NTL.phys.data.PeterPaul.subset <- select(NTL.phys.data.PeterPaul,
 NTL.nutrient.data.PeterPaul.subset <- select(NTL.nutrient.data.PeterPaul, 
                                              lakename, year4, daynum, month, sampledate, depth:po4)
 
-# write a more succinct line of code to subset the nutrient dataset. 
+# write a more succinct line of code to subset the nutrient dataset.
+NTL.nutrient.data.PeterPaul.subset <- select(NTL.nutrient.data.PeterPaul, 
+                                             lakename:sampledate, depth:po4)
+
 
 ```
 
@@ -87,7 +90,9 @@ Note: `tidyr` is moving away from `gather` and `spread` and toward `pivot_longer
 ```{r}
 # Gather nutrient data into one column
 NTL.nutrient.data.PeterPaul.gathered <- gather(NTL.nutrient.data.PeterPaul.subset, "nutrient", "concentration", tn_ug:po4)
+
 NTL.nutrient.data.PeterPaul.gathered <- subset(NTL.nutrient.data.PeterPaul.gathered, !is.na(concentration))
+
 count(NTL.nutrient.data.PeterPaul.gathered, nutrient)
 
 write.csv(NTL.nutrient.data.PeterPaul.gathered, row.names = FALSE, 

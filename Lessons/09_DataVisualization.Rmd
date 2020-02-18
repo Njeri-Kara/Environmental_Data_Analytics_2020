@@ -194,7 +194,7 @@ Nutrientplot <-
   scale_y_continuous(expand = c(0, 0)) +
   #scale_color_brewer(palette = "YlGnBu") +
   #scale_color_manual(values = c("#7fcdbb", "#41b6c4", "#1d91c0", "#225ea8", "#0c2c84")) +
-  #scale_color_viridis(discrete = TRUE, end = 0.8) +
+  scale_color_viridis(discrete = TRUE, end = 0.8) +
   theme(legend.position = "right")
 print(Nutrientplot)
 ```
@@ -235,8 +235,4 @@ The following graph displays the counts of specific endpoints measured in neonic
 Neonics <- read.csv("./Data/Raw/ECOTOX_Neonicotinoids_Insects_raw.csv")
 ggplot(Neonics) +
   geom_bar(aes(x = Endpoint))
-
-
-
-
 ```
