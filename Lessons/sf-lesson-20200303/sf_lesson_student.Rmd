@@ -279,7 +279,7 @@ I like to always save a copy of the raw data in my R session and rename all new 
 
 ```{r activity.load.data}
 # add your code here
-gages_raw <- 
+gages_raw <- st_read(here("data"))
 southeast_state_bounds_raw <- 
 my_tabular_data_raw <- 
 
